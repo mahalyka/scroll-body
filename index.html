@@ -68,8 +68,6 @@
 
   <script type="text/javascript">
     function openModal($modal) {
-    // Note: fixed elements will also need the margin 
-    // adjustment (like a fixed header, if you have one).
     var scrollBarWidth = window.innerWidth - document.body.offsetWidth;
     $('body')
       .css('margin-right', scrollBarWidth)
@@ -84,11 +82,9 @@
       $modal.hide();
   };
   
-  // I prefer to generate and dynamically insert the modal
-  // but for this demonstration it is already in the markup.
   var $modal = $('#modal');
   
-  // Clicking outside the inner modal content should close it.
+  // Clicking outside the inner modal to close.
   $modal
     .click(function () {
       closeModal($modal);
@@ -97,7 +93,7 @@
       event.stopPropagation();
     });
   
-  // Open the modal when open button is pressed.
+  // Open the modal.
   $('#open').click(function (event) {
     event.preventDefault();
     openModal($modal);
